@@ -1,8 +1,8 @@
 let youtube;
 module.exports = {
 	commands: ["yt", "youtube", "zimonitrome"],
-	onReady: (client, globalYoutube) => {
-		youtube = globalYoutube;
+	onReady: (client, modulesList) => {
+		youtube = modulesList["_yt.js"];
 		youtube.updateList((err) => {
 			if (err) {
 				/* eslint-disable no-console */

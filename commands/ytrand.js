@@ -1,8 +1,8 @@
 let youtube;
 module.exports = {
 	commands: ["ytrand", "youtuberand"],
-	onReady: (client, globalYoutube) => {
-		youtube = globalYoutube;
+	onReady: (client, modulesList) => {
+		youtube = modulesList["_yt.js"];
 	},
 	onMsg: (inputs, msg) => {
 		if (youtube.existingVideoIDs.length > 0) {
