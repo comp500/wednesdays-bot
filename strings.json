@@ -10,7 +10,30 @@
 		"help": "Opens this help message.",
 		"yt": "Sends the latest ZimoNitrome Wednesday video.",
 		"ytrand": "Sends a random ZimoNitrome Wednesday video.",
-		"stats": "Gets information about the bot."
+		"stats": "Gets information about the bot.",
+		"boot": "Sends a random WednesdayOS startup message."
 	},
-	"wednesdayList": "PLy3-VH7qrUZ5IVq_lISnoccVIYZCMvi-8"
+	"wednesdayList": "PLy3-VH7qrUZ5IVq_lISnoccVIYZCMvi-8",
+	"boot": [
+		"fetching weedkday...",
+		"initializing dudes...",
+		"producing tadpoles...",
+		"WED_32 READY",
+		"RESOURCE_DATA BEING ANALYZED",
+		"feeding froglets...",
+		"applying A E S T H E T I C S",
+		"hacking database mainframe...",
+		"PING google.com\nPinging google.com [216.58.211.142] with 32 bytes of data:\nReply from 216.56.211.142: bytes=32 time=11ms TTL=52\nReply from 216.56.211.142: bytes=32 time=11ms TTL=52\nReply from 216.56.211.142: bytes=32 time=11ms TTL=52\nReply from 216.56.211.142: bytes=32 time=11ms TTL=52",
+		"Loading old memes...\nreturned object \"wednesday memes will never die\"\nsuccessful :---DDD",
+		"zimo stop making dumb jokes ane make quality videos instead\nlol no never",
+		"stop reading these",
+		"* Monday\n* Tuesday\n* Wednesday <---\n* Thursday\n* Friday\n* Saturday\n* Sunday",
+		"All frogs done loading",
+		"Starting WednesdayOS",
+		"Have a great day\nMe too thanks!",
+		"uhh...\nUNROLL THE RTADPOLE\nUNCLOG THE FROG\nHERE COME DAT BOI\nO SHIT WADDUP",
+		"watch him: --rollin\nwatch him: --go\nwatch him: --rollin\nwatch him: --go",
+		"he be rollin { \"down the street\" }\nhe be rollin { \"to the beat\" }\nhe be rollin { \"down the street\" }\nhe be rollin { \"to the beat\" }",
+		"watch him roll\nshit waddup\nwatch him roll\nshit waddup"
+	]
 }
