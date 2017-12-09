@@ -51,6 +51,9 @@ let updateList = (callback, isCommand, isFirst) => {
 			// reverse order, so date descending
 			newVideoIDs.reverse();
 			existingVideoIDs = newVideoIDs;
+
+			// reset timer
+			lastRequestTime = new Date();
 		}
 	});
 };
