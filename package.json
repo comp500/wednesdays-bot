@@ -1,0 +1,27 @@
+{
+  "name": "wednesdays-bot",
+  "version": "1.0.0",
+  "description": "A discord bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp500/wednesdays-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "wednesdays"
+  ],
+  "author": "comp500",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/comp500/wednesdays-bot/issues"
+  },
+  "homepage": "https://github.com/comp500/wednesdays-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  }
+}
