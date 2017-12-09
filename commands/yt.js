@@ -4,6 +4,7 @@ youtube.setKey(require("../tokens.json").youtube);
 
 let existingVideoIDs = [];
 let latestVideo = new Date();
+let lastRequestTime = new Date();
 
 let updateList = (callback, isCommand, isFirst) => {
 	youtube.getPlayListsItemsById(require("../strings.json").wednesdayList, 50, (err, result) => {
@@ -67,7 +68,20 @@ module.exports = {
 	},
 	onMsg: (inputs, msg) => {
 		if (existingVideoIDs.length > 0) {
-			msg.reply("https://youtube.com/watch?v=" + existingVideoIDs[0]);
+			if ((new Date() - lastRequestTime) > (1000 * 60)) { // 60 seconds between requests
+				updateList((err) => {
+					if (err) {
+						/* eslint-disable no-console */
+						console.error(err);
+						/* eslint-enable no-console */
+						msg.reply("There was an error retrieving the playlist.");
+					} else if (existingVideoIDs.length > 0) {
+						msg.reply("https://youtube.com/watch?v=" + existingVideoIDs[0]);
+					}
+				}, true);
+			} else {
+				msg.reply("https://youtube.com/watch?v=" + existingVideoIDs[0]);
+			}
 		} else {
 			updateList((err) => {
 				if (err) {
