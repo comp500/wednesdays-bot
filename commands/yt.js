@@ -23,7 +23,7 @@ module.exports = {
 					} else if (youtube.existingVideoIDs.length > 0) {
 						msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[0]);
 					}
-				}, true);
+				}, msg);
 			} else {
 				msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[0]);
 			}
@@ -37,7 +37,7 @@ module.exports = {
 				} else if (youtube.existingVideoIDs.length > 0) {
 					msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[0]);
 				}
-			}, true);
+			}, msg);
 		}
 	}
 };
