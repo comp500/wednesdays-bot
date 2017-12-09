@@ -8,8 +8,9 @@
 	"commandHelp": {
 		"ping": "Replies when it is online.",
 		"help": "Opens this help message.",
-		"yt": "Sends the latest ZimoNitrome Wednesday video",
-		"ytrand": "Sends a random ZimoNitrome Wednesday video"
+		"yt": "Sends the latest ZimoNitrome Wednesday video.",
+		"ytrand": "Sends a random ZimoNitrome Wednesday video.",
+		"stats": "Gets information about the bot."
 	},
 	"wednesdayList": "PLy3-VH7qrUZ5IVq_lISnoccVIYZCMvi-8"
 }
