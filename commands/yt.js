@@ -54,6 +54,8 @@ let updateList = (callback, isCommand, isFirst) => {
 
 			// reset timer
 			lastRequestTime = new Date();
+
+			callback(null);
 		}
 	});
 };
