@@ -13,9 +13,6 @@ module.exports = {
 			} else if (result.length < 1) {
 				callback(err);
 			} else {
-				/* eslint-disable no-console */
-				console.log(JSON.stringify(result));
-				/* eslint-enable no-console */
 				let newVideoIDs = [];
 				let newVideoDates = [];
 				let newVideoDatesReverse = {};
