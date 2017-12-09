@@ -43,4 +43,4 @@ client.on("message", msg => {
 	}
 });
 
-client.login(require("./token.json")[0]);
+client.login(require("./tokens.json").discord);

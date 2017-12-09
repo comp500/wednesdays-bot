@@ -57,5 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
-# "Secure" storage of token
-token.json
+# "Secure" storage of tokens
+tokens.json

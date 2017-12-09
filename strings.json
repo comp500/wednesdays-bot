@@ -7,6 +7,8 @@
 	],
 	"commandHelp": {
 		"ping": "Replies when it is online.",
-		"help": "Opens this help message."
-	}
+		"help": "Opens this help message.",
+		"yt": "Sends the latest ZimoNitrome Wednesday video"
+	},
+	"wednesdayList": "PLy3-VH7qrUZ5IVq_lISnoccVIYZCMvi-8"
 }
