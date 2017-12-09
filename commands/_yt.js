@@ -1,13 +1,13 @@
 const YouTube = require("youtube-node");
 const youtube = new YouTube();
-youtube.setKey(require("./tokens.json").youtube);
+youtube.setKey(require("../tokens.json").youtube);
 
 module.exports = {
 	existingVideoIDs: [],
 	latestVideo: new Date(),
 	lastRequestTime: new Date(),
 	updateList: function (callback, isCommand, isFirst) { // function, because lexical 'this'
-		youtube.getPlayListsItemsById(require("./strings.json").wednesdayList, 50, (err, result) => {
+		youtube.getPlayListsItemsById(require("../strings.json").wednesdayList, 50, (err, result) => {
 			if (err) {
 				callback(err);
 			} else if (result.length < 1) {
