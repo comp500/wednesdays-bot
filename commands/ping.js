@@ -1,4 +1,4 @@
 module.exports = {
 	commands: ["ping"],
-	onMsg: (inputs, msg, client) => msg.reply(require("../strings.json")["ping"])
+	onMsg: (inputs, msg) => msg.reply(require("../strings.json")["ping"])
 };

@@ -20,7 +20,9 @@ require("fs").readdirSync("./commands").forEach(function (file) {
 const commandKeys = Object.keys(commandsList);
 
 client.on("ready", () => {
+	/* eslint-disable no-console */
 	console.log(`Logged in as ${client.user.tag}!`);
+	/* eslint-enable no-console */
 	onReadyList.forEach((onReady) => {
 		onReady(client);
 	});
@@ -35,7 +37,7 @@ client.on("message", msg => {
 			commandsList[inputs[1]](inputs.slice(2), msg, client);
 		} else {
 			if (commandKeys.includes("help")) {
-				commandsList["help"](input.slice(1), msg, client);
+				commandsList["help"](inputs.slice(1), msg, client);
 			}
 		}
 	}

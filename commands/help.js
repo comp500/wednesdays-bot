@@ -1,6 +1,6 @@
 module.exports = {
 	commands: ["help"],
-	onMsg: (inputs, msg, client) => {
+	onMsg: (inputs, msg) => {
 		let strings = require("../strings.json");
 		let output = strings["help"].join("\n");
 
