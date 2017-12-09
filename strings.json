@@ -1,0 +1,10 @@
+{
+	"ping": "WednesdaysBot online!",
+	"help": [
+		"WednesdaysBot will message when it is wednesday.",
+		"Commands:",
+		"`wednesdays ping` - Replies when it is online.",
+		"`wednesdays help` - Opens this help message.",
+		"`wednesdays yt`"
+	]
+}
