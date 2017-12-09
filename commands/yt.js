@@ -1,7 +1,8 @@
-const youtube = require("../youtubemodule.js");
+let youtube;
 module.exports = {
 	commands: ["yt", "youtube", "zimonitrome"],
-	onReady: () => {
+	onReady: (client, globalYoutube) => {
+		youtube = globalYoutube;
 		youtube.updateList((err) => {
 			if (err) {
 				/* eslint-disable no-console */
@@ -11,7 +12,6 @@ module.exports = {
 		});
 	},
 	onMsg: (inputs, msg) => {
-		console.log(youtube.existingVideoIDs);
 		if (youtube.existingVideoIDs.length > 0) {
 			if ((new Date() - youtube.lastRequestTime) > (1000 * 60)) { // 60 seconds between requests
 				youtube.updateList((err) => {

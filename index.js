@@ -3,6 +3,7 @@ const client = new Discord.Client();
 
 const commandsList = {};
 const onReadyList = [];
+const globalYoutube = require("./youtubemodule.js");
 
 // load commands
 require("fs").readdirSync("./commands").forEach(function (file) {
@@ -24,7 +25,7 @@ client.on("ready", () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	/* eslint-enable no-console */
 	onReadyList.forEach((onReady) => {
-		onReady(client);
+		onReady(client, globalYoutube);
 	});
 });
 
