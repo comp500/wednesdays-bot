@@ -14,5 +14,14 @@ module.exports = {
 	writeKey: (key, value) => {
 		store[key] = value;
 		fs.writeFileSync("./store.json", JSON.stringify(store));
+	},
+	getStore: () => {
+		return store;
+	},
+	flush: () => {
+		fs.writeFileSync("./store.json", JSON.stringify(store));
+	},
+	reload: () => {
+		store = JSON.parse(fs.readFileSync("./store.json"));
 	}
 };

@@ -29,7 +29,6 @@ module.exports = {
 					}, 500);
 				}
 			});
-			//TODO: message after restart
 		} else {
 			msg.reply(strings.permission);
 		}

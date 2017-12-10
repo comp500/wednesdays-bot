@@ -12,7 +12,9 @@
 		"ytrand": "Sends a random ZimoNitrome Wednesday video.",
 		"stats": "Gets information about the bot.",
 		"boot": "Sends a random WednesdayOS startup message.",
-		"invite": "Sends the invite link for this bot."
+		"invite": "Sends the invite link for this bot.",
+		"subscribe": "Subscribe this channel to WednesdayBot messages.",
+		"unsubscribe": "Unsubscribe this channel from WednesdayBot messages."
 	},
 	"wednesdayList": "PLy3-VH7qrUZ5IVq_lISnoccVIYZCMvi-8",
 	"boot": [
@@ -60,5 +62,16 @@
 	"yt": {
 		"error": "There was an error retrieving the playlist."
 	},
-	"invite": "Here is the invite link: https://discordapp.com/api/oauth2/authorize?client_id=389083091655852032&permissions=18432&scope=bot"
+	"invite": "Here is the invite link: https://discordapp.com/api/oauth2/authorize?client_id=389083091655852032&permissions=18432&scope=bot",
+	"subscribe": {
+		"success": "Subscribed this channel to WednesdayBot messages successfully!",
+		"existing": "This channel has already been subscribed to WednesdayBot messages.",
+		"moved": "Moved the WednesdayBot message subscription to this channel successfully!",
+		"arrayerror": "Error manipulating the subscriptions array, please contact the owner."
+	},
+	"unsubscribe": {
+		"notsubbed": "This channel has not been subscribed, so it cannot be unsubscribed. Or we forgot your subscription.",
+		"success": "Successfully unsubscribed this channel from WednesdayBot messages.",
+		"arrayerror": "Error manipulating the subscriptions array, please contact the owner."
+	}
 }
