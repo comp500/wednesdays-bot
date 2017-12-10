@@ -8,7 +8,7 @@ module.exports = {
 			exec(input);
 		}
 	},
-	onMsg: function (inputs, msg) {
+	onMsg: (inputs, msg) => {
 		if (msg.author.id == require("../tokens.json")["ownerid"]) {
 			if (inputs.length > 0) {
 				this.executeCommand(inputs, (err, output) => {
