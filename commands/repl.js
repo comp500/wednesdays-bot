@@ -11,14 +11,14 @@ let selfInstance = {
 		if (output.length < 1000) {
 			return output;
 		} else {
-			for (let i = 0; i < 100; i++) {
-				output = util.inspect(obj, {maxArrayLength: (100 - i)});
-				if (output.length < 1000) {
-					break;
-				}
-			}
+			output = util.inspect(obj, {depth: 1});
 			if (output.length > 1000) {
-				return strings.repl.toolarge;
+				output = util.inspect(obj, {depth: 0});
+				if (output.length > 1000) {
+					return strings.repl.toolarge;
+				} else {
+					return output;
+				}
 			} else {
 				return output;
 			}
