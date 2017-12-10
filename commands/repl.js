@@ -43,7 +43,7 @@ let selfInstance = {
 		client = globalClient;
 	},
 	onMsg: function (inputs, msg) {
-		if (msg.author.id == tokens["ownerid"]) {
+		if (msg.author.id == tokens.ownerid) {
 			if (replEnabled) {
 				client.removeListener("message", selfInstance.onREPL);
 				replEnabled = false;
