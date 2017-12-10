@@ -6,6 +6,7 @@ const strings = require("../strings.json");
 
 module.exports = {
 	onReady: (client, modulesList) => {
+		// get the global notifier instance
 		notifier = modulesList["_notifier.js"];
 	},
 	existingVideoIDs: [],
@@ -13,6 +14,7 @@ module.exports = {
 	lastRequestTime: new Date(),
 	isFirst: true,
 	updateList: function (callback, msg) { // function, because lexical 'this'
+		// get items from the playlist
 		youtube.getPlayListsItemsById(strings.wednesdayList, 50, (err, result) => {
 			if (err) {
 				callback(err);
@@ -25,9 +27,12 @@ module.exports = {
 				let newLatestVideoDate = this.latestVideo;
 				let newLatestVideoID;
 
+				// for every item in playlist
 				result.items.forEach(element => {
+					// store IDs for later usage
 					newVideoIDs.push(element.contentDetails.videoId);
 					newVideoDates[element.contentDetails.videoId] = new Date(element.contentDetails.videoPublishedAt);
+					// check if newer than program start and other videos
 					if (new Date(element.contentDetails.videoPublishedAt) > newLatestVideoDate) {
 						newLatestVideoDate = new Date(element.contentDetails.videoPublishedAt);
 						newLatestVideoID = element.contentDetails.videoId;
@@ -58,7 +63,7 @@ module.exports = {
 				// reset timer
 				this.lastRequestTime = new Date();
 
-				callback(null);
+				callback(null); // no error, we updated list successfully
 			}
 		});
 	}

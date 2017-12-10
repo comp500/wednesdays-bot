@@ -3,11 +3,16 @@ const strings = require("../strings.json");
 module.exports = {
 	commands: ["subscribe"],
 	onReady: (client, modulesList) => {
+		// import globally required module
 		store = modulesList["_store.js"];
 	},
 	onMsg: (inputs, msg) => {
+		// only usable by admin, or DM member
 		if (!msg.member || msg.member.hasPermission("ADMINISTRATOR")) {
+			// gets the object for the datastore
 			let internalStore = store.getStore();
+			// code to push msg.guild.id and msg.channel.id to internalStore.subscriptions
+			// if already exists, fail or move channel
 			if (!internalStore.subscriptions) {
 				internalStore.subscriptions = [];
 				internalStore.subscriptions.push({
