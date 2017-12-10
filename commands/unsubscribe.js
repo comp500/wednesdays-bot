@@ -19,9 +19,9 @@ module.exports = {
 					if (index > -1) {
 						internalStore.subscriptions.splice(index, 1);
 						store.flush();
-						msg.reply(strings.subscribe.success);
+						msg.reply(strings.unsubscribe.success);
 					} else {
-						msg.reply(strings.subscribe.arrayerror);
+						msg.reply(strings.unsubscribe.arrayerror);
 					}
 				} else {
 					msg.reply(strings.unsubscribe.notsubbed);
