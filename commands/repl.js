@@ -30,11 +30,13 @@ let selfInstance = {
 		}
 		if (msg.author.id == tokens.ownerid) {
 			if (msg.channel.id == replChannel) {
-				try {
-					let output = eval(msg.content);
-					msg.reply("`> " + selfInstance.superInspect(output) + "`");
-				} catch (e) {
-					msg.reply(strings.update.error + "\n`" + e + "`");
+				if (msg.content.slice(0, 2) != "//") { // comment with //
+					try {
+						let output = eval(msg.content);
+						msg.reply("`> " + selfInstance.superInspect(output) + "`");
+					} catch (e) {
+						msg.reply(strings.update.error + "\n`" + e + "`");
+					}
 				}
 			}
 		}
