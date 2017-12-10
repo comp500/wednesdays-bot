@@ -1,7 +1,8 @@
+const strings = require("../strings.json");
 module.exports = {
 	commands: ["boot", "startup"],
 	onMsg: (inputs, msg) => {
-		let boot = require("../strings.json").boot;
+		let boot = strings.boot;
 		msg.reply("```" + boot[Math.floor(Math.random() * boot.length)] + "```");
 		// TODO: the stupid ascii art
 	}

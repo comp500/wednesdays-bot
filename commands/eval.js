@@ -22,7 +22,7 @@ let selfInstance = {
 		}
 	},
 	onMsg: function (inputs, msg) {
-		if (msg.author.id == tokens["ownerid"]) {
+		if (msg.author.id == tokens.ownerid) {
 			try {
 				let output = eval(inputs.join(" "));
 				msg.reply("`> " + selfInstance.superInspect(output) + "`");

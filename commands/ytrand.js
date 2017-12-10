@@ -1,4 +1,5 @@
 let youtube;
+const strings = require("../strings.json");
 module.exports = {
 	commands: ["ytrand", "youtuberand"],
 	onReady: (client, modulesList) => {
@@ -12,7 +13,7 @@ module.exports = {
 						/* eslint-disable no-console */
 						console.error(err);
 						/* eslint-enable no-console */
-						msg.reply("There was an error retrieving the playlist.");
+						msg.reply(strings.yt.error);
 					} else if (youtube.existingVideoIDs.length > 0) {
 						msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[Math.floor(Math.random() * youtube.existingVideoIDs.length)]);
 					}
@@ -26,7 +27,7 @@ module.exports = {
 					/* eslint-disable no-console */
 					console.error(err);
 					/* eslint-enable no-console */
-					msg.reply("There was an error retrieving the playlist.");
+					msg.reply(strings.yt.error);
 				} else if (youtube.existingVideoIDs.length > 0) {
 					msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[Math.floor(Math.random() * youtube.existingVideoIDs.length)]);
 				}

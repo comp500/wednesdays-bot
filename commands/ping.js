@@ -1,4 +1,5 @@
+const strings = require("../strings.json");
 module.exports = {
 	commands: ["ping"],
-	onMsg: (inputs, msg) => msg.reply(require("../strings.json")["ping"])
+	onMsg: (inputs, msg) => msg.reply(strings.ping)
 };

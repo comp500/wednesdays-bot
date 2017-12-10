@@ -2,6 +2,7 @@ const YouTube = require("youtube-node");
 const youtube = new YouTube();
 youtube.setKey(require("../tokens.json").youtube);
 let notifier;
+const strings = require("../strings.json");
 
 module.exports = {
 	onReady: (client, modulesList) => {
@@ -12,7 +13,7 @@ module.exports = {
 	lastRequestTime: new Date(),
 	isFirst: true,
 	updateList: function (callback, msg) { // function, because lexical 'this'
-		youtube.getPlayListsItemsById(require("../strings.json").wednesdayList, 50, (err, result) => {
+		youtube.getPlayListsItemsById(strings.wednesdayList, 50, (err, result) => {
 			if (err) {
 				callback(err);
 			} else if (result.length < 1) {

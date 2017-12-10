@@ -40,10 +40,23 @@
 		"error": "Execution error:",
 		"restarting": "Restarting..."
 	},
+	"exec": {
+		"error": "Execution error:",
+		"empty": "No command specified"
+	},
 	"permission": "You don't have permission to do that",
 	"repl": {
 		"toolarge": "[data too long to print]",
 		"disabled": "REPL disabled!",
 		"enabled": "REPL enabled!"
+	},
+	"stats": {
+		"guilds": "Guilds: ",
+		"ping": "Ping: ",
+		"uptime": "Uptime: ",
+		"platform": "Running on "
+	},
+	"yt": {
+		"error": "There was an error retrieving the playlist."
 	}
 }

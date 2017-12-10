@@ -1,4 +1,5 @@
 let youtube;
+const strings = require("../strings.json");
 module.exports = {
 	commands: ["yt", "youtube", "zimonitrome"],
 	onReady: (client, modulesList) => {
@@ -19,7 +20,7 @@ module.exports = {
 						/* eslint-disable no-console */
 						console.error(err);
 						/* eslint-enable no-console */
-						msg.reply("There was an error retrieving the playlist.");
+						msg.reply(strings.yt.error);
 					} else if (youtube.existingVideoIDs.length > 0) {
 						msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[0]);
 					}
@@ -33,7 +34,7 @@ module.exports = {
 					/* eslint-disable no-console */
 					console.error(err);
 					/* eslint-enable no-console */
-					msg.reply("There was an error retrieving the playlist.");
+					msg.reply(strings.yt.error);
 				} else if (youtube.existingVideoIDs.length > 0) {
 					msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[0]);
 				}
