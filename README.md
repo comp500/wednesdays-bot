@@ -1,6 +1,8 @@
 # WednesdaysBot
 A discord bot. Serves fresh ZimoNitrome videos.
 
+Invite link: [click here](https://discordapp.com/api/oauth2/authorize?client_id=389083091655852032&permissions=18432&scope=bot)
+
 ## How to set up
 1. Get a discord bot token
 1. Get a youtube data api (v3) token
