@@ -12,7 +12,7 @@ let selfInstance = {
 			return output;
 		} else {
 			for (let i = 0; i < 100; i++) {
-				output = util.inspect(obj);
+				output = util.inspect(obj, {maxArrayLength: (100 - i)});
 				if (output.length < 1000) {
 					break;
 				}
