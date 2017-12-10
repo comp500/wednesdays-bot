@@ -11,8 +11,12 @@ let selfInstance = {
 	onMsg: function (inputs, msg) {
 		if (msg.author.id == require("../tokens.json")["ownerid"]) {
 			if (inputs.length > 0) {
-				selfInstance.executeCommand(inputs, (err, output) => {
-					msg.reply("```" + output + "```");
+				selfInstance.executeCommand(inputs.join(" "), (err, output) => {
+					if (err) {
+						msg.reply(require("../strings.json")["update"]["error"] + "```" + err + "```");
+					} else {
+						msg.reply("```" + output + "```");
+					}
 				});
 			} else {
 				msg.reply("No command specified");
