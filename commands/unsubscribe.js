@@ -1,7 +1,7 @@
 let store;
 const strings = require("../strings.json");
 module.exports = {
-	commands: ["subscribe"],
+	commands: ["unsubscribe"],
 	onReady: (client, modulesList) => {
 		store = modulesList["_store.js"];
 	},
