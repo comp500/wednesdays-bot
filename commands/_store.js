@@ -2,7 +2,7 @@ const fs = require("fs");
 let store;
 
 try {
-	store = JSON.parse(fs.readFileSync("../store.json"));
+	store = JSON.parse(fs.readFileSync("./store.json"));
 } catch (e) {
 	store = {};
 }
@@ -13,6 +13,6 @@ module.exports = {
 	},
 	writeKey: (key, value) => {
 		store[key] = value;
-		fs.writeFileSync("../store.json", JSON.stringify(store));
+		fs.writeFileSync("./store.json", JSON.stringify(store));
 	}
 };
