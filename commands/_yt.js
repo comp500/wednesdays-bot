@@ -21,18 +21,16 @@ module.exports = {
 			} else {
 				// use excessive amounts of RAM with many objects to store stuff
 				let newVideoIDs = [];
-				let newVideoDatesList = [];
 				let newVideoDatesObject = {};
 				let newVideoDatesReverse = {};
 
 				result.items.forEach(element => {
 					newVideoIDs.push(element.contentDetails.videoId);
-					newVideoDatesList.push(new Date(element.contentDetails.videoPublishedAt));
 					newVideoDatesObject[new Date(element.contentDetails.videoPublishedAt)] = element.contentDetails.videoId;
 					newVideoDatesReverse[element.contentDetails.videoId] = new Date(element.contentDetails.videoPublishedAt);
 				});
 
-				let newLatestVideo = newVideoDatesList.reduce((lastValue, currentValue) => {
+				let newLatestVideo = Object.keys(newVideoDatesObject).reduce((lastValue, currentValue) => {
 					if (currentValue > lastValue) {
 						return currentValue;
 					} else {
