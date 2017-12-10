@@ -8,7 +8,7 @@ let selfInstance = {
 			exec(input);
 		}
 	},
-	onMsg: function (inputs, msg) {
+	onMsg: (inputs, msg) => {
 		if (msg.author.id == require("../tokens.json")["ownerid"]) {
 			if (inputs.length > 0) {
 				selfInstance.executeCommand(inputs.join(" "), (err, output) => {
