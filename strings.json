@@ -11,7 +11,8 @@
 		"yt": "Sends the latest ZimoNitrome Wednesday video.",
 		"ytrand": "Sends a random ZimoNitrome Wednesday video.",
 		"stats": "Gets information about the bot.",
-		"boot": "Sends a random WednesdayOS startup message."
+		"boot": "Sends a random WednesdayOS startup message.",
+		"invite": "Sends the invite link for this bot."
 	},
 	"wednesdayList": "PLy3-VH7qrUZ5IVq_lISnoccVIYZCMvi-8",
 	"boot": [
@@ -58,5 +59,6 @@
 	},
 	"yt": {
 		"error": "There was an error retrieving the playlist."
-	}
+	},
+	"invite": "Here is the invite link: https://discordapp.com/api/oauth2/authorize?client_id=389083091655852032&permissions=18432&scope=bot"
 }
