@@ -1,9 +1,9 @@
 const util = require("util");
 const strings = require("../strings.json");
 const tokens = require("../tokens.json");
-let client;
 let replEnabled = false;
 let replChannel = null;
+let modulesList;
 let selfInstance = {
 	commands: ["repl"],
 	superInspect: function (obj) {
@@ -26,7 +26,7 @@ let selfInstance = {
 	},
 	onREPL: function (msg) {
 		if (replChannel == null || !replEnabled) {
-			client.removeListener("message", selfInstance.onREPL);
+			msg.client.removeListener("message", selfInstance.onREPL);
 		}
 		if (msg.author.id == tokens.ownerid) {
 			if (msg.channel.id == replChannel) {
@@ -39,20 +39,21 @@ let selfInstance = {
 			}
 		}
 	},
-	onReady: (globalClient) => {
-		client = globalClient;
+	onReady: (client, importModulesList) => {
+		modulesList = importModulesList;
+		modulesList; // there ESLint, I used the variable
 	},
 	onMsg: function (inputs, msg) {
 		if (msg.author.id == tokens.ownerid) {
 			if (replEnabled) {
-				client.removeListener("message", selfInstance.onREPL);
+				msg.client.removeListener("message", selfInstance.onREPL);
 				replEnabled = false;
 				replChannel = null;
 				msg.reply(strings.repl.disabled);
 			} else {
 				replEnabled = true;
 				replChannel = msg.channel.id;
-				client.on("message", selfInstance.onREPL);
+				msg.client.on("message", selfInstance.onREPL);
 				msg.reply(strings.repl.enabled);
 			}
 		} else {

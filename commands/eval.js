@@ -1,6 +1,7 @@
 const util = require("util");
 const strings = require("../strings.json");
 const tokens = require("../tokens.json");
+let modulesList;
 let selfInstance = {
 	commands: ["eval"],
 	superInspect: function (obj) {
@@ -20,6 +21,10 @@ let selfInstance = {
 				return output;
 			}
 		}
+	},
+	onReady: function (client, importModulesList) {
+		modulesList = importModulesList;
+		modulesList; // there ESLint, I used the variable
 	},
 	onMsg: function (inputs, msg) {
 		if (msg.author.id == tokens.ownerid) {
