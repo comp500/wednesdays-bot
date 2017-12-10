@@ -21,13 +21,13 @@ module.exports = {
 			} else {
 				// use excessive amounts of RAM with many objects to store stuff
 				let newVideoIDs = [];
-				let newVideoDatesReverse = {};
+				let newVideoDates = {};
 				let newLatestVideoDate = this.latestVideo;
 				let newLatestVideoID;
 
 				result.items.forEach(element => {
 					newVideoIDs.push(element.contentDetails.videoId);
-					newVideoDatesReverse[element.contentDetails.videoId] = new Date(element.contentDetails.videoPublishedAt);
+					newVideoDates[element.contentDetails.videoId] = new Date(element.contentDetails.videoPublishedAt);
 					if (new Date(element.contentDetails.videoPublishedAt) > newLatestVideoDate) {
 						newLatestVideoDate = new Date(element.contentDetails.videoPublishedAt);
 						newLatestVideoID = element.contentDetails.videoId;
@@ -49,7 +49,7 @@ module.exports = {
 
 				// sort by date ascending
 				newVideoIDs.sort((a, b) => {
-					return newVideoDatesReverse[a] - newVideoDatesReverse[b];
+					return newVideoDates[a] - newVideoDates[b];
 				});
 				// reverse order, so date descending
 				newVideoIDs.reverse();
