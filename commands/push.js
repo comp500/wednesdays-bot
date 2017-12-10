@@ -2,7 +2,7 @@ let store;
 const strings = require("../strings.json");
 const tokens = require("../tokens.json");
 module.exports = {
-	commands: ["subscribe"],
+	commands: ["push"],
 	onReady: (client, modulesList) => {
 		store = modulesList["_store.js"];
 	},
