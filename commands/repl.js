@@ -1,3 +1,4 @@
+const util = require("util");
 let client;
 let replEnabled = false;
 let replChannel = null;
@@ -10,7 +11,7 @@ let selfInstance = {
 		if (msg.author.id == require("../tokens.json")["ownerid"]) {
 			if (msg.channel.id == replChannel) {
 				let output = eval(msg.content);
-				msg.reply("`> " + output + "`");
+				msg.reply("`> " + util.inspect(output) + "`");
 			}
 		}
 	},
@@ -20,10 +21,10 @@ let selfInstance = {
 	onMsg: function (inputs, msg) {
 		if (msg.author.id == require("../tokens.json")["ownerid"]) {
 			if (replEnabled) {
-				msg.reply("Disabling REPL...");
 				client.removeListener("message", selfInstance.onREPL);
 				replEnabled = false;
 				replChannel = null;
+				msg.reply("REPL disabled!");
 			} else {
 				replEnabled = true;
 				replChannel = msg.channel.id;
