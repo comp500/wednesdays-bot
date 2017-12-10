@@ -57,7 +57,8 @@
 		"guilds": "Guilds: ",
 		"ping": "Ping: ",
 		"uptime": "Uptime: ",
-		"platform": "Running on "
+		"platform": "Running on ",
+		"subbed": "Subscribed channels: "
 	},
 	"yt": {
 		"error": "There was an error retrieving the playlist."
