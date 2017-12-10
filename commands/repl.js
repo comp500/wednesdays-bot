@@ -1,11 +1,11 @@
 let client;
 let replEnabled = false;
 let replChannel = null;
-module.exports = {
+let selfInstance = {
 	commands: ["repl"],
 	onREPL: function (msg) {
 		if (replChannel == null || !replEnabled) {
-			client.removeListener("message", this.onREPL);
+			client.removeListener("message", selfInstance.onREPL);
 		}
 		if (msg.author.id == require("../tokens.json")["ownerid"]) {
 			if (msg.channel.id == replChannel) {
@@ -21,13 +21,13 @@ module.exports = {
 		if (msg.author.id == require("../tokens.json")["ownerid"]) {
 			if (replEnabled) {
 				msg.reply("Disabling REPL...");
-				client.removeListener("message", this.onREPL);
+				client.removeListener("message", selfInstance.onREPL);
 				replEnabled = false;
 				replChannel = null;
 			} else {
 				replEnabled = true;
 				replChannel = msg.channel.id;
-				client.on("message", this.onREPL);
+				client.on("message", selfInstance.onREPL);
 				msg.reply("REPL enabled!");
 			}
 		} else {
@@ -35,3 +35,4 @@ module.exports = {
 		}
 	}
 };
+module.exports = selfInstance;
