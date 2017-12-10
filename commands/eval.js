@@ -24,7 +24,8 @@ let selfInstance = {
 	onMsg: function (inputs, msg) {
 		if (msg.author.id == tokens["ownerid"]) {
 			try {
-				let output = eval(msg.content);
+				let input = msg.content.substring(msg.content.indexOf("eval") + 5);
+				let output = eval(input);
 				msg.reply("`> " + selfInstance.superInspect(output) + "`");
 			} catch (e) {
 				msg.reply(strings.update.error + "\n`" + e + "`");
