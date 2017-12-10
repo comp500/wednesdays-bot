@@ -12,7 +12,9 @@ module.exports = {
 					msg.reply(strings["update"]["error"] + "```" + err + "```");
 				} else {
 					msg.reply("```" + output + "```" + strings["update"]["restarting"]);
-					process.exit(); // Faster to exit rather than to prompt restart
+					setTimeout(() => { // Timeout before exit, to send git message
+						process.exit(); // Faster to exit rather than to prompt restart
+					}, 500);
 				}
 			});
 			//TODO: message after restart
