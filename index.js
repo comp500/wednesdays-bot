@@ -37,10 +37,6 @@ client.on("message", msg => {
 
 		if (commandKeys.includes(inputs[1])) {
 			commandsList[inputs[1]](inputs.slice(2), msg, client);
-		} else {
-			if (commandKeys.includes("help")) {
-				commandsList["help"](inputs.slice(1), msg, client);
-			}
 		}
 	}
 });
