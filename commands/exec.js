@@ -7,14 +7,18 @@ module.exports = {
 		} else {
 			exec(input);
 		}
-	}//,
-/*	onMsg: function (inputs, msg) {
-		if (inputs.length > 0) {
-			this.executeCommand(inputs, (err, output) => {
-				msg.reply("```" + output + "```");
-			});
+	},
+	onMsg: function (inputs, msg) {
+		if (msg.author.id == require("../tokens.json")["ownerid"]) {
+			if (inputs.length > 0) {
+				this.executeCommand(inputs, (err, output) => {
+					msg.reply("```" + output + "```");
+				});
+			} else {
+				msg.reply("No command specified");
+			}
 		} else {
-			msg.reply("No command specified");
+			msg.reply("You don't have permission to do that!");
 		}
-	}*/
+	}
 };

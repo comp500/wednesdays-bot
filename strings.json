@@ -35,5 +35,9 @@
 		"watch him: --rollin\nwatch him: --go\nwatch him: --rollin\nwatch him: --go",
 		"he be rollin { \"down the street\" }\nhe be rollin { \"to the beat\" }\nhe be rollin { \"down the street\" }\nhe be rollin { \"to the beat\" }",
 		"watch him roll\nshit waddup\nwatch him roll\nshit waddup"
-	]
+	],
+	"update": {
+		"error": "Execution error:",
+		"restarting": "Restarting..."
+	}
 }
