@@ -1,5 +1,5 @@
 const exec = require("child_process").exec;
-module.exports = {
+let selfInstance = {
 	commands: ["exec"],
 	executeCommand: (input, callback) => {
 		if (callback) {
@@ -8,10 +8,10 @@ module.exports = {
 			exec(input);
 		}
 	},
-	onMsg: (inputs, msg) => {
+	onMsg: function (inputs, msg) {
 		if (msg.author.id == require("../tokens.json")["ownerid"]) {
 			if (inputs.length > 0) {
-				this.executeCommand(inputs, (err, output) => {
+				selfInstance.executeCommand(inputs, (err, output) => {
 					msg.reply("```" + output + "```");
 				});
 			} else {
@@ -22,3 +22,4 @@ module.exports = {
 		}
 	}
 };
+module.exports = selfInstance;
