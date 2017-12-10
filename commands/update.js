@@ -12,7 +12,7 @@ module.exports = {
 					msg.reply(strings["update"]["error"] + "```" + err + "```");
 				} else {
 					msg.reply("```" + output + "```" + strings["update"]["restarting"]);
-					exec.executeCommand("pm2 restart index");
+					process.exit(); // Faster to exit rather than to prompt restart
 				}
 			});
 			//TODO: message after restart
