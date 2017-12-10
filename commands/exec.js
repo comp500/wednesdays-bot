@@ -13,7 +13,7 @@ let selfInstance = {
 			if (inputs.length > 0) {
 				selfInstance.executeCommand(inputs.join(" "), (err, output) => {
 					if (err) {
-						msg.reply(require("../strings.json")["update"]["error"] + "```" + err + "```");
+						msg.reply(require("../strings.json")["update"]["error"] + " `" + err + "`");
 					} else {
 						msg.reply("```" + output + "```");
 					}

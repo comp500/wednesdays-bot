@@ -34,7 +34,7 @@ let selfInstance = {
 					let output = eval(msg.content);
 					msg.reply("`> " + selfInstance.superInspect(output) + "`");
 				} catch (e) {
-					msg.reply(strings.update.error + "```" + e + "```");
+					msg.reply(strings.update.error + " `" + e + "`");
 				}
 			}
 		}
