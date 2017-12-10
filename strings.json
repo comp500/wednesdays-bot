@@ -73,5 +73,10 @@
 		"notsubbed": "This channel has not been subscribed, so it cannot be unsubscribed. Or we forgot your subscription.",
 		"success": "Successfully unsubscribed this channel from WednesdayBot messages.",
 		"arrayerror": "Error manipulating the subscriptions array, please contact the owner."
+	},
+	"push": {
+		"nosub": "Nobody has subscribed to WednesdayBot messages, or the store is broken.",
+		"success": "Successfully pushed your message to all channels.",
+		"fail": "Channel failed, does it not exist anymore? "
 	}
 }
