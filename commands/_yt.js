@@ -21,33 +21,28 @@ module.exports = {
 			} else {
 				// use excessive amounts of RAM with many objects to store stuff
 				let newVideoIDs = [];
-				let newVideoDatesObject = {};
 				let newVideoDatesReverse = {};
+				let newLatestVideoDate = this.latestVideo;
+				let newLatestVideoID;
 
 				result.items.forEach(element => {
 					newVideoIDs.push(element.contentDetails.videoId);
-					newVideoDatesObject[new Date(element.contentDetails.videoPublishedAt)] = element.contentDetails.videoId;
 					newVideoDatesReverse[element.contentDetails.videoId] = new Date(element.contentDetails.videoPublishedAt);
-				});
-
-				let newLatestVideo = Object.keys(newVideoDatesObject).reduce((lastValue, currentValue) => {
-					if (currentValue > lastValue) {
-						return currentValue;
-					} else {
-						return lastValue;
+					if (new Date(element.contentDetails.videoPublishedAt) > newLatestVideoDate) {
+						newLatestVideoDate = new Date(element.contentDetails.videoPublishedAt);
+						newLatestVideoID = element.contentDetails.videoId;
 					}
 				});
 			
-				if (newLatestVideo > this.latestVideo) {
+				if (newLatestVideoDate > this.latestVideo) {
 					// we have a new video!
-					let newVideoID = newVideoDatesObject[newLatestVideo];
 					if (!this.isFirst) {
 						// if first, don't update everyone
 						if (msg) {
 							// if new, don't send twice
-							notifier.notify(newVideoID, msg.channel.id);
+							notifier.notify(newLatestVideoID, msg.channel.id);
 						} else {
-							notifier.notify(newVideoID);
+							notifier.notify(newLatestVideoID);
 						}
 					}
 				}
