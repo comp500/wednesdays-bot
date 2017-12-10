@@ -10,9 +10,7 @@ module.exports = {
 			if ((new Date() - youtube.lastRequestTime) > (1000 * 60)) { // 60 seconds between requests
 				youtube.updateList((err) => {
 					if (err) {
-						/* eslint-disable no-console */
 						console.error(err);
-						/* eslint-enable no-console */
 						msg.reply(strings.yt.error);
 					} else if (youtube.existingVideoIDs.length > 0) {
 						msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[Math.floor(Math.random() * youtube.existingVideoIDs.length)]);
@@ -24,9 +22,7 @@ module.exports = {
 		} else {
 			youtube.updateList((err) => {
 				if (err) {
-					/* eslint-disable no-console */
 					console.error(err);
-					/* eslint-enable no-console */
 					msg.reply(strings.yt.error);
 				} else if (youtube.existingVideoIDs.length > 0) {
 					msg.reply("https://youtube.com/watch?v=" + youtube.existingVideoIDs[Math.floor(Math.random() * youtube.existingVideoIDs.length)]);

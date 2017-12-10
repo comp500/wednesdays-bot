@@ -22,9 +22,7 @@ require("fs").readdirSync("./commands").forEach(function (file) {
 const commandKeys = Object.keys(commandsList);
 
 client.on("ready", () => {
-	/* eslint-disable no-console */
 	console.log(`Logged in as ${client.user.tag}!`);
-	/* eslint-enable no-console */
 	onReadyList.forEach((onReady) => {
 		onReady(client, modulesList);
 	});
