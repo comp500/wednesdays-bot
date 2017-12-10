@@ -32,11 +32,11 @@ client.on("ready", () => {
 
 client.on("message", msg => {
 	if (msg.content.trim().slice(0, 9).toLowerCase() === "wednesday") {
-		let inputs = msg.content.trim().toLowerCase().split(" ");
+		let inputs = msg.content.trim().split(" ");
 		inputs.filter((input) => input.trim().length > 0);
 
-		if (commandKeys.includes(inputs[1])) {
-			commandsList[inputs[1]](inputs.slice(2), msg, client);
+		if (commandKeys.includes(inputs[1].toLowerCase())) {
+			commandsList[inputs[1].toLowerCase()](inputs.slice(2), msg, client);
 		}
 	}
 });
