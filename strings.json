@@ -39,5 +39,11 @@
 	"update": {
 		"error": "Execution error:",
 		"restarting": "Restarting..."
+	},
+	"permission": "You don't have permission to do that",
+	"repl": {
+		"toolarge": "[data too long to print]",
+		"disabled": "REPL disabled!",
+		"enabled": "REPL enabled!"
 	}
 }
