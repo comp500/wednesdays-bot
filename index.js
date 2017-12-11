@@ -41,9 +41,7 @@ client.on("message", msg => {
 	// if prefix found
 	if (msg.content.trim().slice(0, 9).toLowerCase() === "wednesday") {
 		// split based on spaces
-		let inputs = msg.content.trim().split(" ");
-		// remove empty arguments
-		inputs.filter((input) => input.trim().length > 0);
+		let inputs = msg.content.trim().split(/ +/g);
 		
 		if (inputs.length > 1) {
 			// check if command is being called
