@@ -1,7 +1,9 @@
 # WednesdaysBot
 A discord bot. Serves fresh ZimoNitrome videos.
 
-See the website at [w.infra.link](https://w.infra.link/) and the [ls.terminal.ink bot listing](https://ls.terminal.ink/bot/389083091655852032).
+*Note:* Unmaintained and buggy as of 05/09/2018 (09/05/2018 if you're American), but still runs.
+
+See the website at [infra.link/wednesdays-bot](https://infra.link/wednesdays-bot/) and the [ls.terminal.ink bot listing](https://discordbots.co.uk/bot/389083091655852032).
 
 Invite link: [click here](https://discordapp.com/api/oauth2/authorize?client_id=389083091655852032&permissions=18432&scope=bot)
 
